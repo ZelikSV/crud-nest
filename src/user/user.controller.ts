@@ -16,6 +16,7 @@ export class UserController {
     return user;
   }
 
+  @UseGuards(JwtGuard)
   @Patch('update/:id')
   editUser(@GetUser('id') id: number, @Body() dto: EditUserDto) {
     return this.user.editUserById(id, dto);
