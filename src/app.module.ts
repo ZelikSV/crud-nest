@@ -6,6 +6,8 @@ import {PrismaModule} from './prisma/prisma.module';
 import {UserController} from './user/user.controller';
 import {UserService} from './user/user.service';
 import {UserModule} from './user/user.module';
+import { CarService } from './car/car.service';
+import { CarModule } from './car/car.module';
 @Module({
     imports: [
         ConfigModule.forRoot({
@@ -13,9 +15,10 @@ import {UserModule} from './user/user.module';
         }),
         AuthModule,
         PrismaModule,
-        UserModule
+        UserModule,
+        CarModule
     ],
     controllers: [UserController],
-    providers: [UserService]
+    providers: [UserService, CarService]
 })
 export class AppModule {}
