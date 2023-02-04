@@ -6,8 +6,10 @@ import {PrismaModule} from './prisma/prisma.module';
 import {UserController} from './user/user.controller';
 import {UserService} from './user/user.service';
 import {UserModule} from './user/user.module';
-import { CarService } from './car/car.service';
-import { CarModule } from './car/car.module';
+import {CarService} from './car/car.service';
+import {CarModule} from './car/car.module';
+import {CarController} from './car/car.controller';
+
 @Module({
     imports: [
         ConfigModule.forRoot({
@@ -18,7 +20,7 @@ import { CarModule } from './car/car.module';
         UserModule,
         CarModule
     ],
-    controllers: [UserController],
+    controllers: [UserController, CarController],
     providers: [UserService, CarService]
 })
 export class AppModule {}
